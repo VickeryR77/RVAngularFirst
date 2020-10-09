@@ -1,3 +1,54 @@
 h1 {
-color:teal;
+color:white;
 }
+
+h3{
+color:white
+}
+
+body{
+    background: linear-gradient(270deg, rgb(58, 58, 129), rgb(51, 51, 51));
+}
+
+table{
+    width: 40%;
+    position: relative; 
+    left:400px;
+    border-color:black;
+    border:ridge;
+    background-color: whitesmoke;
+}
+
+div.left {
+    position: relative;
+    width: 400px;
+    text-align: left;
+    background-color: whitesmoke;
+}
+
+div.center {
+    position: relative;
+    width: 100px;
+    text-align: right;
+    background-color: whitesmoke;
+}
+
+div.right{
+    position: relative;
+    width: 30px;
+    text-align: right;
+    background-color: whitesmoke;
+}
+
+div.title{
+    position: relative;
+    left:560px;
+}
+
+div.task{
+    position: relative;
+    left:500px;
+}
+
+
+

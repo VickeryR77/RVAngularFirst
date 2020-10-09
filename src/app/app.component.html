@@ -1,15 +1,36 @@
-<h1>{{title}}</h1><br/>
 
-<div *ngFor="let chore of tasks"> 
-  <div class="task">
-{{chore.taskName}} | <button *ngIf="chore.completed" (click)="changeStatus(chore)">Complete</button>
-  </div>
+<div class="title">
+<h1>{{title}}</h1><br/>
 </div>
 
-<br/>
-<br/>
-<br/>
+<div *ngFor="let chore of tasks">
+  <table> 
+  <tr>
+    <td>
+      <div class="left">
+        {{chore.taskName}}
+      </div>
+    </td>
 
-Add a Task:<br/>
-<input [(ngModel)]="question"/>
-<button (click)="addTask()">Add</button>
+    <td>
+      <div class="center">
+        <button *ngIf="chore.completed" (click)="changeStatus(chore)">
+          Complete
+        </button>
+      </div>
+    </td>
+
+    <td>
+      <div class="right">
+        <button (click)="removeTask(chore)">
+          [X]
+        </button>
+      </div>
+    </td>
+  </tr>
+  </table>
+</div>
+
+<div class="task">
+  <h3 style="color:white">Add a Task: <input [(ngModel)]="question"/><button (click)="addTask()">Add</button></h3>
+</div>
