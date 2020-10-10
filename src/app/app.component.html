@@ -1,6 +1,19 @@
 
 <div class="title">
-<h1>{{title}}</h1><br/>
+<h1><img src="assets/img/taskNinja.png"></h1><br/>
+</div>
+
+<!--
+<div *ngIf="tasks && tasks.length > 0 then showData else hideData">
+<ng-template #showData>Show Data</ng-template>
+<ng-template #hideData>Hide Data</ng-template>
+-->
+
+<div *ngIf="!tasks || tasks.length === 0">
+  <img class="endImage" src="assets/img/chorescomplete.gif"/>
+   <p class="finished" >
+     Chores Complete!
+   </p>
 </div>
 
 <div *ngFor="let chore of tasks">
@@ -28,9 +41,22 @@
       </div>
     </td>
   </tr>
+
+   <tr>
+    <button>Edit:</button> <input [(ngModel)]="chore.taskName" placeholder="editfield" />
+   </tr>
   </table>
 </div>
 
 <div class="task">
-  <h3 style="color:white">Add a Task: <input [(ngModel)]="question"/><button (click)="addTask()">Add</button></h3>
+  <h3 style="color:white">
+   <input [(ngModel)]="question"/>
+    <button (click)="addTask()">
+      Add
+    </button>
+  </h3>
+</div>
+
+<div class="filter">
+<input [(ngModel)]="filter"/><button (click)="addFilter()">Filter</button>
 </div>

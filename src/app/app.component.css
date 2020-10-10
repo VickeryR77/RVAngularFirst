@@ -13,7 +13,8 @@ body{
 table{
     width: 40%;
     position: relative; 
-    left:400px;
+    left:450px;
+    bottom:50px;
     border-color:black;
     border:ridge;
     background-color: whitesmoke;
@@ -41,14 +42,32 @@ div.right{
 }
 
 div.title{
+    
     position: relative;
-    left:560px;
+    left:-5px;
+    top:-20px;
 }
 
 div.task{
     position: relative;
-    left:500px;
+    left:450px;
+    bottom:60px;
 }
 
+div.filter{
+    position: relative;
+    left:835px;
+    bottom:101px;
+}
 
+p.finished{
+    font-size:large;
+    color:white;
+    position: relative;
+    left:700px;
+}
 
+img.endImage{
+    position: relative;
+    left:500px;
+}
