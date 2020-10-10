@@ -10,10 +10,10 @@
 -->
 
 <div *ngIf="!tasks || tasks.length === 0">
-  <img class="endImage" src="assets/img/chorescomplete.gif"/>
-   <p class="finished" >
-     Chores Complete!
-   </p>
+  <p class="finished" >
+    Chores Complete!
+  </p>
+ <img class="endImage" src="assets/img/chorescomplete.gif"/>
 </div>
 
 <div *ngFor="let chore of tasks">
@@ -42,7 +42,7 @@
     </td>
   </tr>
 
-   <tr>
+   <tr> <!--Add a div here to make the edit button toggle hide the input-->
     <button>Edit:</button> <input [(ngModel)]="chore.taskName" placeholder="editfield" />
    </tr>
   </table>
