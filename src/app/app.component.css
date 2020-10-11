@@ -8,6 +8,7 @@ color:white
 
 body{
     background: linear-gradient(360deg, rgb(51, 51, 51),rgb(16, 16, 44));
+    width:800px;
 }
 
 div.metal{
@@ -64,6 +65,7 @@ div.filter{
 div.edit{
     position: relative;
     top:-45px;
+    background: linear-gradient(270deg, rgb(194, 197, 199),rgb(239, 243, 253))
 }
 
 p.finished{
@@ -89,4 +91,5 @@ img.stamp{
 
 button.complete{
     border-radius:8px;
+    background: linear-gradient(270deg, rgb(185, 180, 180),rgb(239, 243, 253))
 }

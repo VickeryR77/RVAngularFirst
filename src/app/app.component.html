@@ -49,7 +49,10 @@
 
   <div class="metal">
     <tr> <!--Add a div here to make the edit button toggle hide the input-->
-      <button class="complete" (click)="toggleEdit(chore)">Edit Task</button> <div class="edit" *ngIf="chore.editmode"><input [(ngModel)]="chore.taskName" placeholder="editfield" /></div>
+      <button class="complete" (click)="toggleEdit(chore)">Edit Task</button> 
+       <div class="edit" *ngIf="chore.editmode">
+         <input [(ngModel)]="chore.taskName" placeholder="editfield" />
+       </div>
     </tr>
   </div>
   </table>
