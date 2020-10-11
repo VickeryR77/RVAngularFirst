@@ -40,13 +40,16 @@ export class AppComponent {
     {taskName: "Jam Session", completed: false, editmode: false},
     {taskName: "Another Jam Session", completed: true, editmode: false}
   ];
+
+  swap: ToDo[] = [
+    {taskName: "", completed: false, editmode: false},
+  ];
   
   addFilter = function(){
-
     this.tasks.length = [];
 
     for(let t = 0; t<this.coreTasks.length; t++){
-      if(this.coreTasks[t].taskName.includes(`${this.filter}`)){
+      if(this.coreTasks[t].taskName.toLowerCase().includes(`${this.filter.toLowerCase()}`)){
         this.tasks.push({taskName:`${this.coreTasks[t].taskName}`,completed:this.coreTasks[t].completed,editmode:false});
       };
     };
@@ -54,6 +57,12 @@ export class AppComponent {
 
   changeStatus = function(task: ToDo){
     task.completed=false;
+    var name = task.taskName;
+    for(let t of this.coreTasks){
+      if(t.taskName == name){
+        t.completed = false;
+      }
+    }
   }
 
   toggleEdit = function(task: ToDo){
@@ -75,8 +84,6 @@ export class AppComponent {
     this.tasks.splice(this.tasks.indexOf(task),1);  
   }
 }
-
-
 
 interface ToDo{
 taskName: string,
