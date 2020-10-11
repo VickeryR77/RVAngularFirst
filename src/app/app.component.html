@@ -18,45 +18,52 @@
 
 <div *ngFor="let chore of tasks">
   <table> 
-  <tr>
-    <td>
-      <div class="left">
-        {{chore.taskName}}
-      </div>
-    </td>
+    <div class="metal">
+      <tr>
+        <td>
+          <div class="left">
+            {{chore.taskName}}
+          </div>
+        </td>
 
-    <td>
-      <div class="center">
-        <button *ngIf="chore.completed" (click)="changeStatus(chore)">
-          Complete
-        </button>
-      </div>
-    </td>
+      <td>
+        <div class="center">
+          <button class="complete" *ngIf="chore.completed" (click)="changeStatus(chore)">
+            Complete
+          </button>
+          <div *ngIf="!chore.completed">
+            <img class="stamp" src="assets/img/checkmark.png"/>
+            </div>
+        </div>
+      </td>
 
-    <td>
-      <div class="right">
-        <button (click)="removeTask(chore)">
-          [X]
-        </button>
-      </div>
-    </td>
-  </tr>
+      <td>
+        <div class="right">
+          <button class="complete" (click)="removeTask(chore)">
+            [X]
+          </button>
+        </div>
+      </td>
+    </tr>
+  </div>
 
-   <tr> <!--Add a div here to make the edit button toggle hide the input-->
-    <button>Edit:</button> <input [(ngModel)]="chore.taskName" placeholder="editfield" />
-   </tr>
+  <div class="metal">
+    <tr> <!--Add a div here to make the edit button toggle hide the input-->
+      <button class="complete" (click)="toggleEdit(chore)">Edit Task</button> <div class="edit" *ngIf="chore.editmode"><input [(ngModel)]="chore.taskName" placeholder="editfield" /></div>
+    </tr>
+  </div>
   </table>
 </div>
 
 <div class="task">
   <h3 style="color:white">
    <input [(ngModel)]="question"/>
-    <button (click)="addTask()">
+    <button class="complete" (click)="addTask()">
       Add
     </button>
   </h3>
 </div>
 
 <div class="filter">
-<input [(ngModel)]="filter"/><button (click)="addFilter()">Filter</button>
+<input [(ngModel)]="filter"/><button class="complete" (click)="addFilter()">Filter</button>
 </div>

@@ -16,29 +16,29 @@ export class AppComponent {
   show: boolean = true;
   
   coreTasks: ToDo[] = [
-    {taskName: "Walk the Dog", completed: false},
-    {taskName: "Walk the Cat", completed: true},
-    {taskName: "Walk the Bird", completed: false},
-    {taskName: "Have lunch", completed: false},
-    {taskName: "Have dinner", completed: true},
-    {taskName: "Be good at design", completed: true},
-    {taskName: "Prefer front-end", completed: true},
-    {taskName: "Learning Angular", completed: false},
-    {taskName: "Jam Session", completed: false},
-    {taskName: "Another Jam Session", completed: true}
+    {taskName: "Walk the Dog", completed: false, editmode: false},
+    {taskName: "Walk the Cat", completed: true, editmode: false},
+    {taskName: "Walk the Bird", completed: false, editmode: false},
+    {taskName: "Have lunch", completed: false, editmode: false},
+    {taskName: "Have dinner", completed: true, editmode: false},
+    {taskName: "Be good at design", completed: true, editmode: false},
+    {taskName: "Prefer front-end", completed: true, editmode: false},
+    {taskName: "Learning Angular", completed: false, editmode: false},
+    {taskName: "Jam Session", completed: false, editmode: false},
+    {taskName: "Another Jam Session", completed: true, editmode: false}
   ];
 
   tasks: ToDo[] = [
-    {taskName: "Walk the Dog", completed: false},
-    {taskName: "Walk the Cat", completed: true},
-    {taskName: "Walk the Bird", completed: false},
-    {taskName: "Have lunch", completed: false},
-    {taskName: "Have dinner", completed: true},
-    {taskName: "Be good at design", completed: true},
-    {taskName: "Prefer front-end", completed: true},
-    {taskName: "Learning Angular", completed: false},
-    {taskName: "Jam Session", completed: false},
-    {taskName: "Another Jam Session", completed: true}
+    {taskName: "Walk the Dog", completed: false, editmode: false},
+    {taskName: "Walk the Cat", completed: true, editmode: false},
+    {taskName: "Walk the Bird", completed: false, editmode: false},
+    {taskName: "Have lunch", completed: false, editmode: false},
+    {taskName: "Have dinner", completed: true, editmode: false},
+    {taskName: "Be good at design", completed: true, editmode: false},
+    {taskName: "Prefer front-end", completed: true, editmode: false},
+    {taskName: "Learning Angular", completed: false, editmode: false},
+    {taskName: "Jam Session", completed: false, editmode: false},
+    {taskName: "Another Jam Session", completed: true, editmode: false}
   ];
   
   addFilter = function(){
@@ -47,7 +47,7 @@ export class AppComponent {
 
     for(let t = 0; t<this.coreTasks.length; t++){
       if(this.coreTasks[t].taskName.includes(`${this.filter}`)){
-        this.tasks.push({taskName:`${this.coreTasks[t].taskName}`,completed:this.coreTasks[t].completed});
+        this.tasks.push({taskName:`${this.coreTasks[t].taskName}`,completed:this.coreTasks[t].completed,editmode:false});
       };
     };
   }
@@ -56,9 +56,18 @@ export class AppComponent {
     task.completed=false;
   }
 
+  toggleEdit = function(task: ToDo){
+    if(task.editmode==true){
+    task.editmode=false;
+    }
+    else{
+    task.editmode=true;
+    }
+  }
+
   addTask = function(){
-     this.coreTasks.push({taskName:`${this.question}`,completed:true});
-     this.tasks.push({taskName:`${this.question}`,completed:true});
+     this.coreTasks.push({taskName:`${this.question}`,completed:true, editmode:false});
+     this.tasks.push({taskName:`${this.question}`,completed:true, editmode:false});
   }
 
   removeTask = function(task: ToDo){
@@ -67,9 +76,12 @@ export class AppComponent {
   }
 }
 
+
+
 interface ToDo{
 taskName: string,
-completed: boolean
+completed: boolean,
+editmode: boolean
 };
 
 
