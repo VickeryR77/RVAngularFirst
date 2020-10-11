@@ -4,9 +4,9 @@
 </div>
 
 <!--
-<div *ngIf="tasks && tasks.length > 0 then showData else hideData">
-<ng-template #showData>Show Data</ng-template>
-<ng-template #hideData>Hide Data</ng-template>
+
+Notes: The "All Complete" message displays when the list is entirely empty rather than all items marked as complete.
+
 -->
 
 <div *ngIf="!tasks || tasks.length === 0">
@@ -48,7 +48,7 @@
   </div>
 
   <div class="metal">
-    <tr> <!--Add a div here to make the edit button toggle hide the input-->
+    <tr>
       <button class="complete" (click)="toggleEdit(chore)">Edit Task</button> 
        <div class="edit" *ngIf="chore.editmode">
          <input [(ngModel)]="chore.taskName" placeholder="editfield" />
