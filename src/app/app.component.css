@@ -77,6 +77,11 @@ p.finished{
     bottom:50px;
 }
 
+img.shuriken{
+    position:relative;
+    
+}
+
 img.endImage{
     position: relative;
     left:500px;
